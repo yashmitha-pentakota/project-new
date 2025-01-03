@@ -1,0 +1,116 @@
+/* General Body Styling */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensure the content is centered vertically */
+    width: 100%; /* Ensure content fits horizontally */
+  }
+  
+  /* Form Container Styling */
+  .form-container {
+    width: 100%;
+    max-width: 400px; /* Set the max-width to prevent it from stretching too wide */
+    padding: 30px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  /* Form Heading */
+  h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #333;
+  }
+  
+  /* Form Group (Individual Input Fields) */
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  /* Labels Styling */
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+  
+  /* Input Fields */
+  .form-group input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input:focus {
+    border-color: #318aff;
+  }
+  
+  /* Error Message Styling */
+  .form-group small {
+    display: block;
+    margin-top: 5px;
+    color: red;
+    font-size: 12px;
+  }
+  
+  /* Submit Button Styling */
+  button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    background: linear-gradient(135deg, #318aff, #000000);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #1e6ac2;
+    transform: scale(1.05);
+  }
+  
+  /* Toggle between forms (Login/Register) */
+  p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #318aff;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  p:hover {
+    text-decoration: underline;
+    color: darkcyan;
+  }
+  
+  /* Highlighted Text */
+  .highlighted {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  .highlighted:hover {
+    text-decoration: underline;
+    color: rgb(17, 108, 108);
+  }
+  

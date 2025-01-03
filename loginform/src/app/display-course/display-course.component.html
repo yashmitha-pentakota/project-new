@@ -1,0 +1,35 @@
+<div class="course-container">
+  <div *ngFor="let course of courses" class="course-card">
+
+    <!-- Display Course Image if Available -->
+    <div *ngIf="course.image" class="course-image">
+      <!-- {{course.imageUrl}} -->
+      <img [src]="course.imageUrl" alt="{{ course.name }} image" />
+    </div>
+
+    <!-- Course Information Section -->
+    <div class="course-info">
+      <h2 class="course-name">{{ course.name }}</h2>
+      <p class="course-mentor"><strong>Mentor:</strong> {{ course.mentor }}</p>
+      <p class="course-dates">
+        <strong>Start Date:</strong> {{ course.startDate | date }}<br />
+        <strong>End Date:</strong> {{ course.endDate | date }}
+      </p>
+      <p class="course-duration"><strong>Duration:</strong> {{ course.duration }} months</p>
+      <p class="course-rating"><strong>Rating:</strong> {{ course.rating }} / 10</p>
+    </div>
+
+    <!-- Display Video if Available -->
+    <div *ngIf="course.video && course.videoVisibility">
+      <video width="320" height="240" controls>
+        <source [src]="'http://localhost:3000/uploads/' + course.video" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Button to toggle video visibility -->
+    <button class="video-toggle-btn" (click)="toggleVideo(course)">
+      {{ course.videoVisibility ? 'Hide Video' : 'Show Video' }}
+    </button>
+  </div>
+</div>

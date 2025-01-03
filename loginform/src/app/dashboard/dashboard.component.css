@@ -1,0 +1,43 @@
+/* Centering the .heading element */
+.heading {
+    padding: 5px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    color: black;
+
+    /* Ensures the heading is centered horizontally */
+    width: 100%;
+    height: auto; /* Remove full height so it doesn't take up the full screen */
+    margin: 0 auto;
+}
+
+/* Centering the .button elements */
+.button {
+    padding: 10px 20px; /* Adjust padding to make the buttons smaller */
+    border: 1px solid black;
+    border-radius: 6px;
+    color: black;
+    font-size: 16px; /* Smaller font size */
+    text-align: center;
+    margin: 0 10px; /* Spacing between buttons */
+    display: inline-block; /* Buttons side by side */
+}
+
+/* Center the buttons container */
+.dis {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-top: 20px; /* Some margin from the heading */
+}
+
+/* Style for the logout button */
+.logout {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}

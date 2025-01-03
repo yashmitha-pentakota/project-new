@@ -1,0 +1,84 @@
+/* Grid Layout for Course Container */
+.course-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Create responsive grid columns */
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Styling for each Course Card */
+.course-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: #fff;
+  transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+/* Hover effect for course cards */
+.course-card:hover {
+  transform: translateY(-10px); /* Lift the card on hover */
+}
+
+/* Course Image Styling */
+.course-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Make sure the image covers the space without distortion */
+}
+
+/* Course Information Styling */
+.course-info {
+  padding: 15px;
+}
+
+/* Course Name Styling */
+.course-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+  color: #333; /* Ensure good contrast */
+}
+
+/* Mentor Info Styling */
+.course-mentor,
+.course-duration,
+.course-rating,
+.course-dates {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 5px; /* Space between each line */
+}
+
+/* Bold Styling for Course Rating */
+.course-rating {
+  font-weight: bold;
+  color: #f39c12; /* Gold color for rating */
+}
+
+/* Italic Styling for Dates */
+.course-dates {
+  font-style: italic;
+  color: #999; /* Lighter color for dates */
+}
+
+/* Styling for Course Image if it's displayed */
+.course-card .course-image {
+  margin-bottom: 10px;
+}
+
+/* Styling for Video if it's displayed */
+.course-card .course-video {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+/* Additional styling for small courses */
+@media (max-width: 600px) {
+  .course-container {
+    grid-template-columns: 1fr; /* Stack cards on small screens */
+  }
+}

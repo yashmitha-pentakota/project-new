@@ -1,0 +1,180 @@
+<div class="form-container">
+  
+  <!-- Login Form -->
+  <form *ngIf="activeform === 'login'" (ngSubmit)="loginform()" novalidate>
+    <h2>LOGIN</h2>
+
+    <!-- Email Field -->
+    <div class="form-group">
+      <label for="loginEmail">Email</label>
+      <input
+        type="email"
+        name="email"
+        [(ngModel)]="loginobj.email"
+        id="loginEmail"
+        placeholder="Enter Your Email"
+        required
+        email
+        #email="ngModel"
+      />
+      <div *ngIf="email.invalid && email.touched">
+        <small *ngIf="email.errors?.['required']">Email is required.</small>
+        <small *ngIf="email.errors?.['email']">Enter a valid email address.</small>
+      </div>
+    </div>
+
+    <!-- Password Field -->
+    <div class="form-group">
+      <label for="loginPassword">Password</label>
+      <input
+        type="password"
+        name="password"
+        [(ngModel)]="loginobj.password"
+        id="loginPassword"
+        placeholder="Enter Your Password"
+        required
+        #password="ngModel"
+      />
+      <div *ngIf="password.invalid && password.touched">
+        <small *ngIf="password.errors?.['required']">Password is required.</small>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" [disabled]="!email.valid || !password.valid">
+      Login
+    </button>
+
+    <!-- Toggle to Register -->
+    <p (click)="toggleform('register')">
+      Don't have an account? <span class="highlighted">REGISTER</span>
+    </p>
+  </form>
+
+  <!-- Register Form -->
+  <form *ngIf="activeform === 'register'" (ngSubmit)="registerform()" novalidate>
+    <h2>REGISTER</h2>
+
+    <!-- Name Field -->
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        name="name"
+        [(ngModel)]="registerobj.name"
+        id="name"
+        placeholder="Enter Your Name"
+        required
+        #name="ngModel"
+      />
+      <div *ngIf="name.invalid && name.touched">
+        <small *ngIf="name.errors?.['required']">Name is required.</small>
+      </div>
+    </div>
+
+    <!-- Email Field -->
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        name="email"
+        [(ngModel)]="registerobj.email"
+        id="email"
+        placeholder="Enter Your Email"
+        required
+        email
+        #email="ngModel"
+      />
+      <div *ngIf="email.invalid && email.touched">
+        <small *ngIf="email.errors?.['required']">Email is required.</small>
+        <small *ngIf="email.errors?.['email']">Enter a valid email address.</small>
+      </div>
+    </div>
+
+    <!-- Password Field -->
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        name="password"
+        [(ngModel)]="registerobj.password"
+        id="password"
+        placeholder="Enter Your Password"
+        required
+        minlength="6"
+        #password="ngModel"
+      />
+      <div *ngIf="password.invalid && password.touched">
+        <small *ngIf="password.errors?.['required']">Password is required.</small>
+        <small *ngIf="password.errors?.['minlength']">
+          Password must be at least 6 characters long.
+        </small>
+      </div>
+    </div>
+
+    <!-- Phone Field -->
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input
+        type="tel"
+        name="phone"
+        [(ngModel)]="registerobj.phone"
+        id="phone"
+        placeholder="Enter Your Phone Number"
+        required
+        pattern="^[0-9]{10}$"
+        #phone="ngModel"
+      />
+      <div *ngIf="phone.invalid && phone.touched">
+        <small *ngIf="phone.errors?.['required']">Phone number is required.</small>
+        <small *ngIf="phone.errors?.['pattern']">Enter a valid 10-digit phone number.</small>
+      </div>
+    </div>
+
+    <!-- Address Field -->
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input
+        type="text"
+        name="address"
+        [(ngModel)]="registerobj.address"
+        id="address"
+        placeholder="Enter Your Address"
+        required
+        #address="ngModel"
+      />
+      <div *ngIf="address.invalid && address.touched">
+        <small *ngIf="address.errors?.['required']">Address is required.</small>
+      </div>
+    </div>
+
+    <!-- Age Field -->
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input
+        type="number"
+        name="age"
+        [(ngModel)]="registerobj.age"
+        id="age"
+        placeholder="Enter Your Age"
+        required
+        min="18"
+        #age="ngModel"
+      />
+      <div *ngIf="age.invalid && age.touched">
+        <small *ngIf="age.errors?.['required']">Age is required.</small>
+        <small *ngIf="age.errors?.['min']">You must be at least 18 years old.</small>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" [disabled]="!name.valid || !email.valid || !password.valid || !phone.valid || !address.valid || !age.valid">
+      Register
+    </button>
+
+    <!-- Toggle to Login -->
+    <p (click)="toggleform('login')">
+      Already have an account? <span class="highlighted">LOGIN</span>
+    </p>
+  </form>
+</div>
